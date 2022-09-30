@@ -46,8 +46,7 @@
 						<environment>Sandbox</environment>
 						<applicationName>${nameofapp}</applicationName>
 						<properties>
-							<env>${myenv}</env>
-							
+							<myenv>${myenv}</myenv>							
 						</properties>
 					</cloudHubDeployment>
 					<executions>
