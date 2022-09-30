@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<configuration-properties doc:name="Configuration properties" doc:id="348aaa7d-962f-42ff-b208-2d001910f9ea" file="${env}-config.yaml" />
+	<error-handler name="globalError_Handler" doc:id="cc0c414a-0d6a-4f2d-9252-ab97973449c0" >
+		<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="6261fc59-a8f7-4d02-ba69-d7cc7270dc65" >
+			<ee:transform doc:name="Transform Message" doc:id="acc516d4-ee46-470e-a710-6b7882ee795f" >
+				<ee:message >
+					<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"errorMessage" : "Hi i got an error"
+}]]></ee:set-payload>
+				</ee:message>
+			</ee:transform>
+		</on-error-continue>
+	</error-handler>
+</mule>
