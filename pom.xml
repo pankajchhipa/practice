@@ -45,10 +45,10 @@
 						<region>us-west-1</region>
 						<environment>Sandbox</environment>
 						<applicationName>${nameofapp}</applicationName>
-						<properties>
+						
 							<env>${ENV}</env>
-							<token>${TOKEN}</token>
-						</properties>
+							
+						
 					</cloudHubDeployment>
 					<executions>
 						<execution>
